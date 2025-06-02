@@ -75,6 +75,13 @@ void SecondTest()
     var user_input = Console.ReadLine();
     var parsed_input = user_input.ToLower();
 
+    var is_num = int.TryParse(user_input, out int num);
+    if (is_num)
+    {
+        Console.WriteLine("Name cannot contain numbers.");
+        return;
+    }
+
     switch (parsed_input)
     {
         case "john":
@@ -91,6 +98,7 @@ void ThirdTest()
     bool input_incomplete = true;
 
     Console.WriteLine("Insert an array of numbers: ");
+    Console.WriteLine("Each number is inserted seperately. Once you wrote the first number, press enter.");
     Console.WriteLine("Write \"stop\" to complete the insertion.");
 
     while (input_incomplete)
